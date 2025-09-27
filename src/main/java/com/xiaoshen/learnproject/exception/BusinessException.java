@@ -1,11 +1,12 @@
 package com.xiaoshen.learnproject.exception;
 
-import com.xiaoshen.learnproject.common.ErrorCode;
+import lombok.Getter;
 
 /**
  * 自定义异常类
  */
-public class BusinessException extends RuntimeException {
+@Getter
+public class BusinessException extends RuntimeException{
 
     /**
      * 错误码
@@ -17,7 +18,7 @@ public class BusinessException extends RuntimeException {
         this.code = code;
     }
 
-    public BusinessException(ErrorCode errorCode) {
+    public BusinessException(com.xiaoshen.learnproject.exception.ErrorCode errorCode) {
         super(errorCode.getMessage());
         this.code = errorCode.getCode();
     }
@@ -25,9 +26,5 @@ public class BusinessException extends RuntimeException {
     public BusinessException(ErrorCode errorCode, String message) {
         super(message);
         this.code = errorCode.getCode();
-    }
-
-    public int getCode() {
-        return code;
     }
 }

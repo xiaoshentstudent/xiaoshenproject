@@ -70,3 +70,10 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.xiaoshen.learnproject.controller
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure:
+            logging: info
